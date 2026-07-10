@@ -30,39 +30,31 @@ public class Endereco {
     }
 
     public void setLogradouro(String logradouro) {
-        if(Validador.eValidoString(logradouro)){
-            this.logradouro = logradouro;
-        }
-        else{
+        if(!Validacoes.eValidoString(logradouro)){
             throw new IllegalArgumentException("Erro: O logradouro não pode ser nulo ou vazio!");
         }
+        this.logradouro = logradouro;
     }
 
     public void setNumero(int numero) {
-        if(Validador.eValidoInt(numero)){
-            this.numero = numero;
-        }
-        else{
+        if(!Validacoes.eValidoInt(numero)){
             throw new IllegalArgumentException("Erro: O número deve ser maior que zero!");
         }
+        this.numero = numero;
     }
 
     public void setBairro(String bairro) {
-        if(Validador.eValidoString(bairro)){
-            this.bairro = bairro;
-        }
-        else{
+        if(!Validacoes.eValidoString(bairro)){
             throw new IllegalArgumentException("Erro: O bairro não pode ser nulo ou vazio!");
         }
+        this.bairro = bairro;
     }
 
     public void setCidade(String cidade) {
-        if(Validador.eValidoString(cidade)){
-            this.cidade = cidade;
-        }
-        else{
+        if(!Validacoes.eValidoString(cidade)){
             throw new IllegalArgumentException("Erro: A cidade não pode ser nulo ou vazio!");
         }
+        this.cidade = cidade;
     }
 
     @Override
