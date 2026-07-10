@@ -65,10 +65,11 @@ public class Endereco {
         }
     }
 
-    public void exibirDetalhes(){
-        System.out.println("Logradouro: "+getLogradouro());
-        System.out.println("Número: "+getNumero());
-        System.out.println("Bairro: "+getBairro());
-        System.out.println("Cidade: "+getCidade());
+    @Override
+    public String toString() {
+        return  "\nLogradouro: "+getLogradouro()+
+                "\nNúmero: "+getNumero()+
+                "\nBairro: "+getBairro()+
+                "\nCidade: "+getCidade();
     }
 }
