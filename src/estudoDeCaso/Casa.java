@@ -5,7 +5,8 @@ public class Casa extends Imovel {
     private boolean garagem;
     private double iptu;
 
-    public Casa (int nrQuartos, boolean garagem, double iptu){
+    public Casa (Endereco endereco, double valor, StatusImovel status, int nrQuartos, boolean garagem, double iptu){
+        super(endereco, valor, status);
         this.setNrQuartos(nrQuartos);
         this.setGaragem(garagem);
         this.setIptu(iptu);
@@ -43,8 +44,14 @@ public class Casa extends Imovel {
 
     @Override
     public String toString() {
-        return  "\nNº de quartos: "+getNrQuartos()+
+        return super.toString()+
+                "\nNº de quartos: "+getNrQuartos()+
                 "\nGaragem: "+(isGaragem() ? "Sim" : "Não")+
-                "\nIPTU: "+getIptu();
+                "\nIPTU: "+String.format("%.2f",getIptu());
+    }
+
+    @Override
+    public double calcularValorFinal() {
+        return getIptu();
     }
 }

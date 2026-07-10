@@ -3,7 +3,8 @@ package estudoDeCaso;
 public class Terreno extends Imovel {
     private TipoTerreno tipo;
 
-    public Terreno(TipoTerreno tipo){
+    public Terreno(Endereco endereco, double valor, StatusImovel status,TipoTerreno tipo){
+        super(endereco, valor, status);
         this.setTipo(tipo);
     }
 
@@ -20,6 +21,12 @@ public class Terreno extends Imovel {
 
     @Override
     public String toString() {
-        return "Tipo de terreno: "+getTipo();
+        return super.toString()+
+                "\nTipo de terreno: "+getTipo();
+    }
+
+    @Override
+    public double calcularValorFinal() {
+        return (getValor() * 0.08);
     }
 }

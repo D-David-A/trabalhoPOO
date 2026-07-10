@@ -6,7 +6,8 @@ public class Apartamento extends Imovel {
     private double vlrCondominio;
     private double iptu;
 
-    public Apartamento(int andar, int numeroApt, double vlrCondominio, double iptu){
+    public Apartamento(Endereco endereco, double valor, StatusImovel status,int andar, int numeroApt, double vlrCondominio, double iptu){
+        super(endereco, valor, status);
         this.setAndar(andar);
         this.setNumeroApt(numeroApt);
         this.setVlrCondominio(vlrCondominio);
@@ -59,9 +60,15 @@ public class Apartamento extends Imovel {
 
     @Override
     public String toString() {
-        return  "\nAndar: "+getAndar()+
+        return super.toString()+
+                "\nAndar: "+getAndar()+
                 "\nNº Apartamento: "+getNumeroApt()+
-                "\nValor do Condomínio: "+getVlrCondominio()+
-                "\nIPTU: "+getIptu();
+                "\nValor do Condomínio: "+String.format("%.2f",getVlrCondominio())+
+                "\nIPTU: "+String.format("%.2f",getIptu());
+    }
+
+    @Override
+    public double calcularValorFinal() {
+        return (getIptu() + getVlrCondominio());
     }
 }
