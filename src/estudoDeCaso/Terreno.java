@@ -27,6 +27,6 @@ public class Terreno extends Imovel {
 
     @Override
     public double calcularValorFinal() {
-        return (getValor() * 0.08);
+        return (getValor() + (getValor() * 0.08));
     }
 }

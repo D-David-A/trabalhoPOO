@@ -30,13 +30,13 @@ public class Validacoes {
 
     public static String erroCPF(String texto){
         if(texto == null || texto.length() != 11){
-            return "Erro: CPF deve conter 11 números!";
+            return "CPF deve conter 11 números!";
         }
         if(!texto.matches(REGEX_CPF)){
-            return "Erro: CPF só deve conter números!";
+            return "CPF só deve conter números!";
         }
         if(!validaCPF(texto)){
-            return "Erro: CPF incorreto!";
+            return "CPF incorreto!";
         }
         return null;
     }

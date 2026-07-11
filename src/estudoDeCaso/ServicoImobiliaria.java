@@ -8,6 +8,18 @@ public class ServicoImobiliaria {
     private List<Imovel> imoveis = new ArrayList<>();
     private List<Contrato> contratos = new ArrayList<>();
 
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public List<Imovel> getImoveis() {
+        return imoveis;
+    }
+
+    public List<Contrato> getContratos() {
+        return contratos;
+    }
+
     public void cadastrarCliente(Cliente c){
         for(Cliente x : clientes){
             if(x.equals(c)){
@@ -110,7 +122,6 @@ public class ServicoImobiliaria {
                 imoveisAlugados++;
             }
 
-            // Descobre qual é o imóvel mais caro com base no valor base (ou valor final)
             if (maisCaro == null || i.getValor() > maisCaro.getValor()) {
                 maisCaro = i;
             }
