@@ -49,7 +49,7 @@ public abstract class Imovel implements Calculavel {
 
     public void setValor(double valor) {
         if(!Validacoes.eValidoDouble(valor)){
-            throw new IllegalArgumentException("Erro: Valor deve ser maior que 0");
+            throw new ValorNegativoException("Erro: Valor deve ser maior que 0");
         }
         this.valor = valor;
     }
