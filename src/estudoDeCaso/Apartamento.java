@@ -64,11 +64,11 @@ public class Apartamento extends Imovel {
                 "\nAndar: "+getAndar()+
                 "\nNº Apartamento: "+getNumeroApt()+
                 "\nValor do Condomínio: "+String.format("%.2f",getVlrCondominio())+
-                "\nIPTU: "+String.format("%.2f",getIptu());
+                "\nIPTU: R$"+String.format("%.2f",getIptu());
     }
 
     @Override
     public double calcularValorFinal() {
-        return (getIptu() + getVlrCondominio());
+        return (getValor() + getIptu() + getVlrCondominio());
     }
 }

@@ -47,11 +47,11 @@ public class Casa extends Imovel {
         return super.toString()+
                 "\nNº de quartos: "+getNrQuartos()+
                 "\nGaragem: "+(isGaragem() ? "Sim" : "Não")+
-                "\nIPTU: "+String.format("%.2f",getIptu());
+                "\nIPTU: R$"+String.format("%.2f",getIptu());
     }
 
     @Override
     public double calcularValorFinal() {
-        return getIptu();
+        return (getValor() + getIptu());
     }
 }

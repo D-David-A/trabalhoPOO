@@ -64,7 +64,7 @@ public abstract class Imovel implements Calculavel {
     @Override
     public String toString() {
         return  "\nCódigo: " + getCod() +
-                "\nValor do Imóvel: " + String.format("%.2f", getValor()) +
+                "\nValor do Imóvel: R$" + String.format("%.2f", getValor()) +
                 "\nStatus: " + getStatus() +
                 "\nEndereço: " + getEndereco();
     }
